@@ -3,6 +3,11 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+footer {
+    color: gray;
+    font-style: italic;
+}
+
 p {
     line-height: 1.5;
 }
