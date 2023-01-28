@@ -1,8 +1,16 @@
-<<<<<<< HEAD
-=======
+
+
+#nav-links {
+    display: none;
+}
+
 body {
     font-size: 16px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main {
+    text-align: center;
 }
 
 footer {
@@ -13,4 +21,27 @@ footer {
 p {
     line-height: 1.5;
 }
->>>>>>> 970b90994f58fb2abfbec8a97b5cb6c78e0377ea
+
+.brand {
+    font-size: 2rem;
+}
+
+nav {
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-right: .5em;
+}
+
+.about {
+    margin-top: 23vh;
+}
+
+@media (min-width: 598px) {
+    #hamburger-menu {
+        display: none;
+    }
+
+    #nav-links {
+        display: block;
+    }
+}
