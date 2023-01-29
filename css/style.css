@@ -13,8 +13,22 @@ main {
     text-align: center;
 }
 
+main.upload {
+    text-align: left;
+}
+
+.upload .banner {
+    text-align: center;
+}
+
 footer {
     color: gray;
+    font-style: italic;
+}
+
+.or {
+    color: lightgray;
+    text-align: center;
     font-style: italic;
 }
 
