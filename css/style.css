@@ -102,6 +102,10 @@ nav a {
     display: inline-flex;
 }
 
+.card .btn {
+    background-color: #85754D;
+}
+
 /* The following code for dropdown menus was adapted from: https://www.w3schools.com/howto/howto_css_dropdown.asp*/
 /* Dropdown Button */
 .dropbtn {
@@ -142,6 +146,12 @@ nav a {
 }
   /* End of citation */
 
+.search-bar input {
+    display: inline-block;
+    justify-content: center;
+    width: 80%;
+}
+
 .about {
     margin-top: 23vh;
 }
@@ -153,6 +163,10 @@ nav a {
 
     #nav-links {
         display: block;
+    }
+
+    .search-bar input {
+        width: 65%;
     }
 }
 
