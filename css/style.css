@@ -36,6 +36,39 @@ footer {
     font-style: italic;
 }
 
+.card img {
+    padding: 0;
+    margin: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.card {
+    flex: 0 0 250px;
+    background-color: white;
+    margin: 0.5rem;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+}
+  
+.card p {
+    padding: 0.5rem 1rem;
+}
+
 p {
     line-height: 1.5;
 }
@@ -57,10 +90,11 @@ nav a {
     color: white;
 }
 
-.search-bar input{
+.dropdown-content input{
     width: 25%;
     justify-content: left;
     margin-bottom: 1em;
+    display: inline-flex;
 }
 
 /* The following code for dropdown menus was adapted from: https://www.w3schools.com/howto/howto_css_dropdown.asp*/
@@ -68,7 +102,8 @@ nav a {
 .dropbtn {
     background-color: #85754D;
     color: white;
-    padding: 16px;
+    padding: 0.5em;
+    margin-top: 1em;
     font-size: 16px;
     border: none;
 }
@@ -77,12 +112,14 @@ nav a {
 .dropdown {
     position: relative;
     display: inline-block;
+    justify-content: left;
 }
   
   /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     display: none;
     position: absolute;
+    justify-content: left;
     background-color: #E8E3D3;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
