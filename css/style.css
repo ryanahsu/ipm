@@ -64,14 +64,10 @@ footer {
   
 .card {
     flex: 0 0 250px;
-    background-color: white;
+    background-color: #E8E3D3;
     margin: 0.5rem;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-}
-  
-.card p {
-    padding: 0.5rem 1rem;
 }
 
 p {
@@ -104,6 +100,11 @@ nav a {
 
 .card .btn {
     background-color: #85754D;
+}
+
+.card .btn:hover {
+    background-color: #E8E3D3;
+    color: #4B2E83;
 }
 
 /* The following code for dropdown menus was adapted from: https://www.w3schools.com/howto/howto_css_dropdown.asp*/
