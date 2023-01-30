@@ -9,6 +9,10 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+h1, h2 {
+    color:#4B2E83;
+}
+
 main {
     text-align: center;
 }
@@ -44,7 +48,57 @@ nav {
     display: inline-block;
     font-size: 1.5rem;
     margin-right: .5em;
+    background-color: #4B2E83; 
+    color: white;
 }
+
+
+nav a {
+    color: white;
+}
+
+.search-bar input{
+    width: 25%;
+    justify-content: left;
+    margin-bottom: 1em;
+}
+
+/* The following code for dropdown menus was adapted from: https://www.w3schools.com/howto/howto_css_dropdown.asp*/
+/* Dropdown Button */
+.dropbtn {
+    background-color: #85754D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+  
+  /* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+  /* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E8E3D3;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+  /* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #85754D;
+}
+  /* End of citation */
 
 .about {
     margin-top: 23vh;

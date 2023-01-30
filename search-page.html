@@ -19,7 +19,7 @@
 
 <body>
     <!-- Navbar not linked with images yet --->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">IPM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -54,32 +54,40 @@
         <h1>
             <p>Search for Projects</p>
         </h1>
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search here...">
+        </div>
 
-        <input type="text" placeholder="Search by class or keyword...">
-
-        <h2>Sort by:</h2>
         <!-- List of possible ways to sort results by -->
         <div class="sort-box">
             <!-- Checkbox for sorting by upload date -->
-            <input type="checkbox" id="sort1" name="sort1" value="Upload date">
-            <label for="sort1">Upload date</label><br>
+            <div class="dropdown">
+                <button class="dropbtn">Sort by:</button>
+                <div class="dropdown-content">
 
-            <!-- Checkbox for sorting by number of likes -->
-            <input type="checkbox" id="sort2" name="sort2" value="Likes">
-            <label for="sort2">Likes</label><br>
+                    <input type="checkbox" id="sort1" name="sort1" value="Upload date">
+                    <label for="sort1">Upload date</label><br>
 
-            <!-- Checkbox for sorting by grade received-->
-            <input type="checkbox" id="sort3" name="sort3" value="Grade received">
-            <label for="sort3">Grade received</label><br>
+                    <!-- Checkbox for sorting by number of likes -->
+                    <input type="checkbox" id="sort2" name="sort2" value="Likes">
+                    <label for="sort2">Likes</label><br>
 
-            <!-- Checkbox for sorting by time spent on the project -->
-            <input type="checkbox" id="sort4" name="sort4" value="Time spent">
-            <label for="sort2">Time spent</label><br>
+                    <!-- Checkbox for sorting by grade received-->
+                    <input type="checkbox" id="sort3" name="sort3" value="Grade received">
+                    <label for="sort3">Grade received</label><br>
 
-            <!-- Checkbox for switching between ascending or descending sort -->
-            <!-- Should sort in descending manner by default -->
-            <input type="checkbox" id="sort5" name="sort5" value="Ascending">
-            <label for="sort2">Ascending</label><br>
+                    <!-- Checkbox for sorting by time spent on the project -->
+                    <input type="checkbox" id="sort4" name="sort4" value="Time spent">
+                    <label for="sort2">Time spent</label><br>
+
+                    <!-- Checkbox for switching between ascending or descending sort -->
+                    <!-- Should sort in descending manner by default -->
+                    <input type="checkbox" id="sort5" name="sort5" value="Ascending">
+                    <label for="sort2">Ascending</label><br>
+
+                </div>
+            </div>
         </div>
 
         <h2>Results:</h2>
