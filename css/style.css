@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 * {
     box-sizing: border-box;
+=======
+
+html {
+    height: 100%;
+    width: 100%
+>>>>>>> 36c8b28e712d584a887008957da15c7f35498b31
 }
 
 #nav-links {
