@@ -184,7 +184,7 @@ footer {
         display: none;
     }
 
-    #nav-links {
+    .nav-link {
         display: block;
     }
 
@@ -193,4 +193,28 @@ footer {
     }
 }
 
+
+@media (min-width: 768px) {
+    html {
+        height: 100%;
+    }
+
+    main {
+        font-size: 18px;
+    }
+
+    nav {
+        font-size: 1.5rem;
+    }
+}
  
+
+@media (min-width: 992px) {
+    main {
+        font-size: 24px;
+    }
+
+    nav {
+        font-size: 2rem;
+    }
+}
