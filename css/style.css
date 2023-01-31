@@ -7,6 +7,10 @@ html {
 #nav-links {
     display: none;
 }
+header {
+    text-align: center;
+    background-color: #85754D;
+}
 
 body {
     position: relative;
