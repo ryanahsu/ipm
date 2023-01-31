@@ -1,4 +1,6 @@
-
+* {
+    box-sizing: border-box;
+}
 
 #nav-links {
     display: none;
@@ -9,10 +11,11 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.banner{
-    border: 2px solid gray;
-    margin: 2rem;
+.banner {
+    margin-top: 2rem;
 }
+
+
 
 h1, h2 {
     color:#4B2E83;
@@ -156,6 +159,19 @@ nav a {
 
 .about {
     margin-top: 23vh;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    max-width: 960px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    color: black;
+    background-color: #85754D;
 }
 
 @media (min-width: 598px) {
