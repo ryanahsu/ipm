@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="author" content="Project Draft 1">
+    <meta name="description" content="This website is a HTML/CSS mockup of our project">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -44,12 +46,14 @@
   </nav>
 
   <main class="upload">
-      <div class="banner">
+      <header>
+        <div class="banner">
           <h1>Upload your Project</h1>
           <p>Fill out the information below to add your INFO project to our repository!</p>
-      </div>
-      <div class="container">
-          <div class="row justify-content-evenly">
+        </div>
+      </header>
+      <div class="container-fluid">
+          <div class="row">
               <div class="col">
                   <form>
                       <div class="mb-3">
@@ -66,7 +70,7 @@
                       </div>
                   </form>
               </div>
-              <div class="col submit">
+              <div class="col text-center mx-auto">
                 <form>
                   <div class="mb-3">
                     <label for="formFile" class="form-label">Upload your project here</label>
@@ -78,6 +82,9 @@
                   <div class="mb-3 mt-0">
                     <label class="form-label"></label>
                     <input class="form-control" placeholder="Paste a link">
+                  </div>
+                  <div>
+                    <button type="submit" class="btn btn-primary mb-3">Submit</button>
                   </div>
                 </form>
               </div>
