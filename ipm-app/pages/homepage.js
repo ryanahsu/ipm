@@ -1,8 +1,10 @@
 import React from 'react';
+import Navbar from '../src/components/NavBar';
 
 export default function Homepage() {
   return (
     <div>
+        <Navbar />
         <header>
             <div class="banner">
                 <h1>Welcome to the UW Informatics Projects Portfolio Page</h1>
