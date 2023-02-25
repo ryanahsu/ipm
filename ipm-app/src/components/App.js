@@ -1,9 +1,17 @@
-import Homepage from "../pages/homepage";
+import { Homepage, Upload, Profile, Search } from "../pages/homepage";
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
     <div>
-      <Homepage />
+      <p>hello world</p>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="upload" element={<Upload />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="search" element={<Search />} />
+      </Routes>
     </div>
   );
 }

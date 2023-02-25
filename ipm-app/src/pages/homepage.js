@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/NavBar';
 
-export default function Homepage() {
+export function Homepage() {
   return (
     <div>
         <Navbar />
@@ -25,3 +25,35 @@ export default function Homepage() {
         </footer>
     </div>
   )};
+
+
+
+export function Upload() {
+    return (
+        <div>
+            <p>
+                this is the upload page
+            </p>
+        </div>
+    )
+}
+
+export function Profile() {
+    return (
+        <div>
+            <p>
+                this is the Profile page
+            </p>
+        </div>
+    )
+}
+
+export function Search() {
+    return (
+        <div>
+            <p>
+                this is the Search page
+            </p>
+        </div>
+    )
+}
