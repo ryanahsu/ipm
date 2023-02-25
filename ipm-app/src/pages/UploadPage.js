@@ -20,39 +20,39 @@ function TextSubmissionForm() {
   }
 
   return (
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
+    <div className="container-fluid">
+        <div className="row">
+            <div className="col">
                 <form onSubmit={handleSubmit}>
-                    <div class="mb-3">
-                        <label class="form-label">What class are you uploading for?</label>
-                        <input class="form-control"></input>
+                    <div className="mb-3">
+                        <label className="form-label">What class are you uploading for?</label>
+                        <input className="form-control"></input>
                     </div>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label>Give a brief description of your project.</label>
-                        <textarea class="form-control" rows="6" value={text} onChange={handleChange} required></textarea>
+                        <textarea className="form-control" rows="6" value={text} onChange={handleChange} required></textarea>
                     </div>
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <label>Add any tags that are associated with your project.</label>
-                        <textarea class="form-control" rows="6" value={text} onChange={handleChange} required></textarea>
+                        <textarea className="form-control" rows="6" value={text} onChange={handleChange} required></textarea>
                     </div>
                 </form>
             </div>
-            <div class="col text-center mx-auto">
+            <div className="col text-center mx-auto">
                 <form onSubmit={handleSubmit}>
-                    <div class="mb-3">
-                        <label for="formFile" class="form-label">Upload your project here</label>
-                        <input class="form-control" type="file" id="formFile"></input>
+                    <div className="mb-3">
+                        <label for="formFile" className="form-label">Upload your project here</label>
+                        <input className="form-control" type="file" id="formFile"></input>
                     </div>
-                    <div class="or">
+                    <div className="or">
                         <p>or</p>
                     </div>
-                    <div class="mb-3 mt-0">
-                        <label class="form-label"></label>
-                        <input class="form-control" placeholder="Paste a link"></input>
+                    <div className="mb-3 mt-0">
+                        <label className="form-label"></label>
+                        <input className="form-control" placeholder="Paste a link"></input>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-primary mb-3">Submit</button>
+                        <button type="submit" className="btn btn-primary mb-3">Submit</button>
                     </div>
                 </form>
             </div>

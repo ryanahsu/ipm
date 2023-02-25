@@ -5,7 +5,6 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <div>
-      <p>hello world</p>
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="upload" element={<Upload />} />
