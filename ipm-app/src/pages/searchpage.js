@@ -1,5 +1,6 @@
 import React from 'react'; // General React import
 
+import Navbar from '../components/NavBar'; // NavBar import
 import CardList from '../components/CardList'; // Default import of the CardList
 
 export function Search(props) {
@@ -9,7 +10,7 @@ export function Search(props) {
 
     return (
         <div>
-            <p>The card deck is below me!</p>
+            <Navbar />
             {renderableCardDeck}
         </div>
     );
