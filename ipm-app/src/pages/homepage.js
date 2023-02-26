@@ -1,5 +1,7 @@
 import React from 'react';
+import CardList from '../components/CardList';
 import Navbar from '../components/NavBar';
+import {LoadProjectProfile} from '../pages/profilepage'
 
 export function Homepage() {
   return (
@@ -41,9 +43,17 @@ export function Upload() {
 export function Profile() {
     return (
         <div>
-            <p>
-                this is the Profile page
-            </p>
+            <Navbar />
+            <main>
+                <div class="banner">
+                    <h1>Tell us more about the project!</h1>
+                    <p>How do you want to describe your project?</p>
+                </div>
+                <LoadProjectProfile /> 
+            </main>
+            <footer className="profileFooter">
+                <p>&copy; 2023 Informatics Portfolio Manager</p>
+            </footer>
         </div>
     )
 }
