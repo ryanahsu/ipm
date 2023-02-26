@@ -1,0 +1,38 @@
+[
+    {
+        "img": "img/sample_profile.png",
+        "name": "Project Name",
+        "description":"Description of project",
+        "class": "Class",
+        "grade": 0,
+        "tags": ["Tag1", "Tag2"],
+        "page": "Link to somewhere"
+    },
+    {
+      "img": "img/sample_profile.png",
+      "name": "Instant Pizza Maker",
+      "description":"An app that instantly makes pizza.",
+      "class": "INFO 340",
+      "grade": 2.5,
+      "tags": ["Pizza", "Food"],
+      "page": "Link to somewhere"
+    },
+    {
+        "img": "img/sample_profile.png",
+        "name": "Bread Slicer",
+        "description":"The best thing since sliced bread.",
+        "class": "INFO 340",
+        "grade": 3.5,
+        "tags": ["Bread", "Food"],
+        "page": "Link to somewhere"
+    },
+    {
+        "img": "img/sample_profile.png",
+        "name": "Best Final Project",
+        "description":"This project is the best!",
+        "class": "INFO 999",
+        "grade": 99,
+        "tags": ["Best", "Tag2"],
+        "page": "Link to somewhere"
+    }
+]
