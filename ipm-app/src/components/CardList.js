@@ -17,7 +17,7 @@ function ProjectCard(props) {
                 <h3 className="card-title">{projectName}</h3>
                 <p>{projectDescription}</p>
                 <p className="card-text">{projectTags}</p>
-                <a href={projectPage} className="btn btn-dark">Learn more</a>
+                <a href={projectPage} className="btn btn-dark align-self-end">Learn more</a>
             </div>
         </div>
     );
