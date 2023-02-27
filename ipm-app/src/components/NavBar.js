@@ -6,8 +6,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const DEFAULT_USERS = [
     { userId: null, userName: "Log Out", userImg: '/img/null.png' }, //null user
-    { userId: "student", userName: "Student", userImg: '/img/Penguin.png' },
-    { userId: "admin", userName: "Admin", userImg: '/img/Parrot.png' }
+    { userId: "student", userName: "Student", userImg: '/img/student.png' },
+    { userId: "admin", userName: "Admin", userImg: '/img/admin.png' }
   ]
 
 export default function Navbar(props) {
@@ -16,7 +16,7 @@ export default function Navbar(props) {
 
   const handleClick = (event) => {
     const thisUser = event.currentTarget.name
-    const selectedUserObj = DEFAULT_USERS.filter((userObj) => userObj.userId === thisUser)[0] || DEFAULT_USERS[0] //null user if not found
+    const selectedUserObj = DEFAULT_USERS.filter((userObj) => userObj.userId === thisUser)[0] || DEFAULT_USERS[0] 
 
     console.log(selectedUserObj);
     loginUser(selectedUserObj);

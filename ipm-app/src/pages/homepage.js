@@ -42,7 +42,7 @@ export function Profile() {
     return (
         <div>
             <main>
-                <div class="banner">
+                <div className="banner">
                     <h1>Tell us more about the project!</h1>
                     <p>How do you want to describe your project?</p>
                 </div>
