@@ -27,10 +27,10 @@ export default function Navbar(props) {
       return null;
     }
 
-    let classList = "btn user-icon";
+    // let classList = "btn user-icon";
 
     return (
-      <Dropdown.Item className={classList} key={userObj.userName} 
+      <Dropdown.Item className="userIcon" key={userObj.userName} 
       name={userObj.userId} onClick={handleClick} >
         <img src={userObj.userImg} alt={userObj.userName + " avatar"} /> {userObj.userName}
       </Dropdown.Item>
@@ -59,7 +59,7 @@ export default function Navbar(props) {
                 <li className="nav-item">
                     <Link className="nav-link" to="/profile">Profile</Link>
                 </li>
-                <Dropdown>
+                <Dropdown className="">
                   <Dropdown.Toggle variant="primary">
                     <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
                   </Dropdown.Toggle>

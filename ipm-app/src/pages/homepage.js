@@ -48,19 +48,9 @@ export function Profile() {
                 </div>
                 <LoadProjectProfile /> 
             </main>
-            <footer>
+            <footer className="mt-3 mb-0 profileFooter">
                 <p>&copy; 2023 Informatics Portfolio Manager</p>
             </footer>
-        </div>
-    )
-}
-
-export function Search() {
-    return (
-        <div>
-            <p>
-                this is the Search page
-            </p>
         </div>
     )
 }
