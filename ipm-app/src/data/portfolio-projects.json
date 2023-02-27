@@ -10,7 +10,7 @@
         "page": "Link to somewhere"
     },
     {
-        "img": "img/sample_profile.png",
+        "img": "img/pizza2.jpg",
         "name": "Instant Pizza Maker",
         "description":"An app that instantly makes pizza.",
         "course": "INFO 340",
@@ -20,7 +20,7 @@
         "page": "Link to somewhere"
     },
     {
-        "img": "img/sample_profile.png",
+        "img": "img/breadslicer.jpg",
         "name": "Bread Slicer",
         "description":"The best thing since sliced bread.",
         "course": "INFO 340",
@@ -30,7 +30,7 @@
         "page": "Link to somewhere"
     },
     {
-        "img": "img/sample_profile.png",
+        "img": "img/bestproject.jpg",
         "name": "Best Final Project",
         "description":"This project is the best!",
         "course": "INFO 999",
