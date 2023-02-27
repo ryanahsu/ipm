@@ -7,6 +7,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 import PROJECT_LIST from './data/portfolio-projects.json'; // Projects to display
 
+// Firebase code:
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
