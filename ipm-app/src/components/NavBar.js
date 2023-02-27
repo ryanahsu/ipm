@@ -59,6 +59,14 @@ export default function Navbar(props) {
                 <li className="nav-item">
                     <Link className="nav-link" to="/profile">Profile</Link>
                 </li>
+                <Dropdown>
+                  <Dropdown.Toggle variant="primary">
+                    <img src={currentUser.userImg} alt={currentUser.userName + " avatar"} />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    {userButtons}
+                  </Dropdown.Menu>      
+                </Dropdown>
             </ul>
         </div>
     </nav>
