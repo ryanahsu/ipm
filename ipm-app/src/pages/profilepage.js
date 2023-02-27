@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // the function loads the selected information of the selected project 
 export function LoadProjectProfile(props){
@@ -33,15 +33,26 @@ export function LoadProjectProfile(props){
         </ul>
         </div>
     );
+    
+    const [comment, setComment] = useState('');
+    const handleChange = (event) => {
+        setComment(event.target.value);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setComment('');
+      };
+      
 
     // comment box, need to make it interactive (when submit is hit, clear the comment box)
     const commentBox = (
             <div className="commentColumn">
                 <h3>Comments!</h3>
                     <h5>What are your thoughts on the project?</h5>
-                    <textarea className="comment" rows="5" cols="70" placeholder="Write out your comment!"></textarea>
+                    <textarea className="comment" rows="5" cols="70" placeholder="Write out your comment!" value={comment} onChange={handleChange}></textarea>
                     <div>
-                    <button type="submit" className="btn btn-secondary">Submit</button>
+                    <button type="submit" className="btn-lg btn-secondary" onClick={handleSubmit}>Submit</button>
                     </div>
             </div>          
     );
