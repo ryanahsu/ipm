@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function TextSubmissionForm() {
+export function TextSubmissionForm() {
   const [text, setText] = useState("");
 
   function handleSubmit(event) {
@@ -60,5 +60,3 @@ function TextSubmissionForm() {
     </div>
     )
 }   
-
-export default TextSubmissionForm;
