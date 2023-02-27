@@ -26,7 +26,6 @@ export function Search(props) {
 
     return (
         <div>
-            <Navbar />
             <main>
                 <div className="banner">
                     <h1>Search for Projects</h1>
@@ -42,7 +41,7 @@ export function Search(props) {
                     {renderableCardDeck}
                 </div>
             </main>
-            <footer>
+            <footer className='mt-3 mb-0'>
                 <p>&copy; 2023 Informatics Portfolio Manager</p>
             </footer>
         </div>

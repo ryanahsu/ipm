@@ -5,7 +5,7 @@ export function LoadProjectProfile(props){
     const imgurl = props.imgurl; 
     const name = props.name; 
     const description = props.description
-    const className = props.class; 
+    const className = props.course; 
     const page = props.page; 
     
     // need to select the image and load 
