@@ -7,7 +7,10 @@ function ProjectCard(props) {
     const img = props.img;                                      // The displayed image of the project (string)
     const projectName = props.name;                             // The name/title of the project (string)
     const projectDescription = props.description;               // The description of the project (string)
-    const projectTags = props.tags.map((tag) => tag + " ");     // The tags of the project (Array of: strings) *The project's class should be implemented as a tag*
+    const projectTags = props.tags;                             // The tags of the project (Array of: strings)
+    const projectClass = props.class;                           // The class that the project is for (string)
+    const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
+    const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)
     const projectPage = props.page;                             // The url to page of the project (string or reactrouter) - project page should likely be a single page that renders out information from a given card
 
     return (
