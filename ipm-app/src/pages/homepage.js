@@ -51,7 +51,7 @@ export function Profile() {
                 </div>
                 <LoadProjectProfile /> 
             </main>
-            <footer className="profileFooter">
+            <footer>
                 <p>&copy; 2023 Informatics Portfolio Manager</p>
             </footer>
         </div>

@@ -10,7 +10,7 @@ export function LoadProjectProfile(props){
     
     // need to select the image and load 
     const projectImg = (
-        <div class="col">
+        <div className="col">
             <img src={"img/sample_profile.png"}  className="rounded float-start" alt="Responsive img"></img>
         </div>
     );
@@ -57,9 +57,9 @@ export function LoadProjectProfile(props){
                 <div className="col">
                     {projectImg}
                 </div>
-                <div className="row justify-content-evenly">
-                    {projectInformation}
-                </div>
+            </div>
+            <div className="row justify-content-evenly">
+                {projectInformation}
             </div>
         </div>
 
