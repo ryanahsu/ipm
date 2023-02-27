@@ -5,23 +5,26 @@
         "description":"Description of project",
         "class": "Class",
         "grade": 0,
+        "hours": 0,
         "tags": ["Tag1", "Tag2"],
         "page": "Link to somewhere"
     },
     {
-      "img": "img/sample_profile.png",
-      "name": "Instant Pizza Maker",
-      "description":"An app that instantly makes pizza.",
-      "class": "INFO 340",
-      "grade": 2.5,
-      "tags": ["Pizza", "Food"],
-      "page": "Link to somewhere"
+        "img": "img/sample_profile.png",
+        "name": "Instant Pizza Maker",
+        "description":"An app that instantly makes pizza.",
+        "class": "INFO 340",
+        "hours": 10,
+        "grade": 2.5,
+        "tags": ["Pizza", "Food"],
+        "page": "Link to somewhere"
     },
     {
         "img": "img/sample_profile.png",
         "name": "Bread Slicer",
         "description":"The best thing since sliced bread.",
         "class": "INFO 340",
+        "hours": 6,
         "grade": 3.5,
         "tags": ["Bread", "Food"],
         "page": "Link to somewhere"
@@ -31,6 +34,7 @@
         "name": "Best Final Project",
         "description":"This project is the best!",
         "class": "INFO 999",
+        "hours": 99,
         "grade": 99,
         "tags": ["Best", "Tag2"],
         "page": "Link to somewhere"
