@@ -42,7 +42,7 @@ export function Search(props) {
                     {renderableCardDeck}
                 </div>
             </main>
-            <footer>
+            <footer className='profileFooter mt-3'>
                 <p>&copy; 2023 Informatics Portfolio Manager</p>
             </footer>
         </div>
