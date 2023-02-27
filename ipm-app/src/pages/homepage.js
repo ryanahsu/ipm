@@ -1,12 +1,10 @@
 import React from 'react';
 import CardList from '../components/CardList';
-import Navbar from '../components/NavBar';
 import {LoadProjectProfile} from '../pages/profilepage'
 
 export function Homepage() {
   return (
     <div>
-        <Navbar />
         <header>
             <div className="banner">
                 <h1>Welcome to the UW Informatics Projects Portfolio Page</h1>
@@ -43,7 +41,6 @@ export function Upload() {
 export function Profile() {
     return (
         <div>
-            <Navbar />
             <main>
                 <div class="banner">
                     <h1>Tell us more about the project!</h1>
