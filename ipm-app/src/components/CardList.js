@@ -1,4 +1,7 @@
 import React from 'react'; // General React import
+
+import { Link } from 'react-router-dom';
+import { LoadProjectProfile } from '../pages/profilepage';
  
 // ProjectCard builds a single card for a project.
 // Each card needs the following props: img, name, description, tags, page.
@@ -8,10 +11,19 @@ function ProjectCard(props) {
     const projectName = props.name;                             // The name/title of the project (string)
     const projectDescription = props.description;               // The description of the project (string)
     const projectTags = props.tags;                             // The tags of the project (Array of: strings)
-    const projectClass = props.class;                           // The class that the project is for (string)
+    const projectCourse = props.course;                           // The course that the project is for (string)
     const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
     const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)
-    const projectPage = props.page;                             // The url to page of the project (string or reactrouter) - project page should likely be a single page that renders out information from a given card
+    
+    // This element renders the Learn More button
+    // The button is actually a link that renders the /profile page
+    // On the render call, it passes in all of the projects props
+    const projectPage = (
+        <Link className="btn btn-dark align-self-end" to="/profile" element={
+            <LoadProjectProfile imgurl={img} name={projectName} description={projectDescription} course={projectCourse} page="" />}>
+            Learn More
+        </Link>
+    );    
 
     return (
         <div className="card" key={projectName}>
@@ -20,7 +32,7 @@ function ProjectCard(props) {
                 <h3 className="card-title">{projectName}</h3>
                 <p>{projectDescription}</p>
                 <p className="card-text">{projectTags}</p>
-                <a href={projectPage} className="btn btn-dark align-self-end">Learn more</a>
+                {projectPage}
             </div>
         </div>
     );
