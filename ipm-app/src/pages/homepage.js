@@ -8,7 +8,7 @@ export function Homepage() {
         <header>
             <div className="banner">
                 <h1>Welcome to the UW Informatics Projects Portfolio Page</h1>
-                <p>Upload your proejcts, share ideas, and create inspiration</p>
+                <p>Upload your projects, share ideas, and create inspiration</p>
             </div>
         </header>
 
