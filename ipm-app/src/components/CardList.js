@@ -31,7 +31,9 @@ function ProjectCard(props) {
             <div className="card-body">
                 <h3 className="card-title">{projectName}</h3>
                 <p>{projectDescription}</p>
-                <p className="card-text">{projectTags}</p>
+                <p className="card-text">{projectCourse}</p>
+                <p className="card-text">Grade received: {projectGrade}</p>
+                <p className="card-text">{projectHours} hours</p>
                 {projectPage}
             </div>
         </div>
