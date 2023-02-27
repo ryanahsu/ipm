@@ -26,7 +26,6 @@ export function Search(props) {
 
     return (
         <div>
-            <Navbar />
             <main>
                 <div className="banner">
                     <h1>Search for Projects</h1>
