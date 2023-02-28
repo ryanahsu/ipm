@@ -25,7 +25,7 @@ function App(props) {
       <div className="row flex-grow-1">
         <Routes>
           <Route index element={<Homepage />} />
-          <Route path="upload" element={<Upload />} />
+          <Route path="upload" element={<TextSubmissionForm />} />
           <Route path="profile" element={<Profile />} />
           <Route path="search" element={<Search projectList={projectList} />} />
         </Routes>
