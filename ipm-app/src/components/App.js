@@ -5,8 +5,8 @@ import { Routes, Route } from 'react-router-dom';
 import { TextSubmissionForm } from '../pages/UploadPage'
 import React, {useState} from 'react';
 import DEFAULT_USERS from '../data/users.json';
-
-
+import { LoadProjectProfile } from '../pages/profilepage';
+import CardList from "./CardList";
 
 
 function App(props) {
@@ -27,7 +27,10 @@ function App(props) {
           <Route index element={<Homepage />} />
           <Route path="upload" element={<TextSubmissionForm />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="search" element={<Search projectList={projectList} />} />
+          <Route path="search" element={<Search />} >
+              <Route path=":projectName" element={<LoadProjectProfile />} />
+              <Route index element={<CardList projectList={projectList} />} />
+          </Route>
         </Routes>
       </div>
       

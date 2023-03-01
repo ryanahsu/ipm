@@ -1,7 +1,22 @@
 import React from 'react'; // General React import
 
 import { Link } from 'react-router-dom';
-import { LoadProjectProfile } from '../pages/profilepage';
+
+import Dropdown from 'react-bootstrap/Dropdown'; // Import for dropdown
+import DropdownButton from 'react-bootstrap/DropdownButton'; // Import for dropdown button
+
+function SortButton() {
+    return (
+      <DropdownButton id="sort-button" title="Sort by">
+        <Dropdown.Item href="#/action-1">Grade</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">Upload Date</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">Likes</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">Time Spent</Dropdown.Item>
+      </DropdownButton>
+    );
+}
+
+const sortButton = SortButton();
  
 // ProjectCard builds a single card for a project.
 // Each card needs the following props: img, name, description, tags, page.
@@ -14,13 +29,13 @@ function ProjectCard(props) {
     const projectCourse = props.course;                         // The course that the project is for (string)
     const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
     const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)
+    const projectPageName = projectName.replaceAll(' ', '-');      // The name of the project's details page (string)
     
     // This element renders the Learn More button
     // The button is actually a link that renders the /profile page
     // On the render call, it passes in all of the projects props
     const projectPage = (
-        <Link className="btn btn-dark align-self-end" to="/profile" element={
-            <LoadProjectProfile imgurl={img} name={projectName} description={projectDescription} course={projectCourse} page="" />}>
+        <Link className="btn btn-dark align-self-end" to={"/search/"+projectPageName}>
             Learn More
         </Link>
     );    
@@ -52,12 +67,24 @@ export default function CardList(props) {
     });
 
     return (
-        <div className="results">
-            <section>
-                <div className="container img-container card-deck">
-                    {renderableCardDeck}
-                </div>
-            </section>
-        </div>
+        <main>
+            <div className="banner">
+                <h1>Search for Projects</h1>
+            </div>
+            <div className="search-bar">
+                <input type="text" placeholder="Search here..." />
+            </div>
+            <h2>Results:</h2>
+            <div className="sort">
+                {sortButton}
+            </div>
+            <div className="results">
+                <section>
+                    <div className="container img-container card-deck">
+                        {renderableCardDeck}
+                    </div>
+                </section>
+            </div>
+        </main>
     );
 }

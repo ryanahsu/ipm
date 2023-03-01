@@ -1,17 +1,25 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import _ from 'lodash';
+import PROJECT_LIST from '../data/portfolio-projects.json'; // Projects to display
+
 
 // the function loads the selected information of the selected project 
 export function LoadProjectProfile(props){
-    const imgurl = props.imgurl; 
-    const name = props.name; 
-    const description = props.description
-    const className = props.course; 
-    const page = props.page; 
-    
+
+    const projectNameString = useParams().projectName;
+    let project =  _.find(PROJECT_LIST, {name: projectNameString.replaceAll('-', ' ')});
+
+    const imgurl = project.imgurl; 
+    const name = project.name; 
+    const description = project.description
+    const className = project.course; 
+    const page = project.page; 
+
     // need to select the image and load 
     const projectImg = (
         <div className="col">
-            <img src={"img/sample_profile.png"}  className="rounded float-start" alt="Responsive img"></img>
+            <img src={imgurl}  className="rounded float-start" alt="Responsive img"></img>
         </div>
     );
 
@@ -19,18 +27,13 @@ export function LoadProjectProfile(props){
     
     const projectInformation = (
         <div>
-        <ul>
-            <h2>Project Title: {name} </h2>
-            <li>Project Description
-                <p>{description}</p>
-            </li>
-            <li>Class: {className} </li>
-            <li>Quarter: </li>
-            <li>Team members: </li>
-            <li>Github Link: 
-                <a href = {page}></a>
-            </li>
-        </ul>
+            <ul>
+                <h2>{name} </h2>
+                <li>Description: {description}</li>
+                <li>Class: {className} </li>
+                <li>Quarter: </li>
+                <li>Team members: </li>
+            </ul>
         </div>
     );
     
@@ -63,20 +66,20 @@ export function LoadProjectProfile(props){
 
     return (
         <div>
-        <div className="container">
-            <div className="row justify-content-evenly">
-                <div className="col">
-                    {projectImg}
+            <div className="container">
+                <div className="row justify-content-evenly">
+                    <div className="col">
+                        {projectImg}
+                    </div>
+                </div>
+                <div className="row justify-content-evenly">
+                    {projectInformation}
                 </div>
             </div>
-            <div className="row justify-content-evenly">
-                {projectInformation}
-            </div>
-        </div>
 
-        <div className="container">
-            {commentBox}
-        </div>
+            <div className="container">
+                {commentBox}
+            </div>
         </div>
     )
 }
