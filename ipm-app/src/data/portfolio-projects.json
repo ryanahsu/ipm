@@ -38,5 +38,15 @@
         "grade": 99,
         "tags": ["Best", "Tag2"],
         "page": "Link to somewhere"
+    },
+    {
+        "img": "/img/sample_profile.png",
+        "name": "Test Project",
+        "description":"Test test test.",
+        "course": "Test",
+        "grade": 0,
+        "hours": 0,
+        "tags": ["Tag1", "Tag2"],
+        "page": "Link to somewhere"
     }
 ]

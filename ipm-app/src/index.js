@@ -5,6 +5,7 @@ import './style.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter } from 'react-router-dom'
 
+
 import PROJECT_LIST from './data/portfolio-projects.json'; // Projects to display
 
 // Import the functions you need from the SDKs you need
