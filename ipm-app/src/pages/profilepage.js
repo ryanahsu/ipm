@@ -4,6 +4,7 @@ import _ from 'lodash';
 import PROJECT_LIST from '../data/portfolio-projects.json'; // Projects to display
 
 
+
 // the function loads the selected information of the selected project 
 export function LoadProjectProfile(props){
 

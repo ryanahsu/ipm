@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App'
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
+import { getDatabase } from "firebase/database";
 
 
 import PROJECT_LIST from './data/portfolio-projects.json'; // Projects to display
@@ -21,7 +22,8 @@ const firebaseConfig = {
   projectId: "ipm-project-24f93",
   storageBucket: "ipm-project-24f93.appspot.com",
   messagingSenderId: "1021906957125",
-  appId: "1:1021906957125:web:78444eedd0cdacaa36442c"
+  appId: "1:1021906957125:web:78444eedd0cdacaa36442c",
+  databaseURL: "https://ipm-project-24f93-default-rtdb.firebaseio.com/"
 };
 
 // Initialize Firebase
