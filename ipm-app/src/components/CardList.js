@@ -67,24 +67,27 @@ export default function CardList(props) {
     });
 
     return (
-        <main>
-            <div className="banner">
-                <h1>Search for Projects</h1>
-            </div>
-            <div className="search-bar">
-                <input type="text" placeholder="Search here..." />
-            </div>
-            <h2>Results:</h2>
-            <div className="sort">
-                {sortButton}
-            </div>
-            <div className="results">
-                <section>
-                    <div className="container img-container card-deck">
-                        {renderableCardDeck}
-                    </div>
-                </section>
-            </div>
-        </main>
+        <div>
+            <main>
+                <div className="banner">
+                    <h1>Search for Projects</h1>
+                </div>
+                <div className="search-bar">
+                    <input type="text" placeholder="Search here..." />
+                </div>
+                <h2>Results:</h2>
+                <div className="sort">
+                    {sortButton}
+                </div>
+                <div className="results">
+                    <section>
+                        <div className="container img-container card-deck">
+                            {renderableCardDeck}
+                        </div>
+                    </section>
+                </div>
+            </main>
+        </div>
     );
+
 }
