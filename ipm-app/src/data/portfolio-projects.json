@@ -5,9 +5,7 @@
         "description":"Description of project",
         "course": "Class",
         "grade": 0,
-        "hours": 0,
-        "tags": ["Tag1", "Tag2"],
-        "page": "Link to somewhere"
+        "hours": 0
     },
     {
         "img": "img/pizza2.jpg",
@@ -15,9 +13,7 @@
         "description":"An app that instantly makes pizza.",
         "course": "INFO 340",
         "hours": 10,
-        "grade": 2.5,
-        "tags": ["Pizza", "Food"],
-        "page": "Link to somewhere"
+        "grade": 2.5
     },
     {
         "img": "img/breadslicer.jpg",
@@ -25,9 +21,7 @@
         "description":"The best thing since sliced bread.",
         "course": "INFO 340",
         "hours": 6,
-        "grade": 3.5,
-        "tags": ["Bread", "Food"],
-        "page": "Link to somewhere"
+        "grade": 3.5
     },
     {
         "img": "img/bestproject.jpg",
@@ -35,9 +29,7 @@
         "description":"This project is the best!",
         "course": "INFO 999",
         "hours": 99,
-        "grade": 99,
-        "tags": ["Best", "Tag2"],
-        "page": "Link to somewhere"
+        "grade": 99
     },
     {
         "img": "/img/sample_profile.png",
@@ -45,8 +37,6 @@
         "description":"Test test test.",
         "course": "Test",
         "grade": 0,
-        "hours": 0,
-        "tags": ["Tag1", "Tag2"],
-        "page": "Link to somewhere"
+        "hours": 0
     }
 ]
