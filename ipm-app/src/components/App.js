@@ -31,6 +31,7 @@ function App(props) {
               <Route path=":projectName" element={<LoadProjectProfile />} />
               <Route index element={<CardList projectList={projectList} />} />
           </Route>
+          <Route path="*" element={<Homepage />} />
         </Routes>
       </div>
       
