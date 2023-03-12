@@ -1,4 +1,4 @@
-import { Homepage, Upload, Profile} from "../pages/homepage";
+import { Homepage } from "../pages/homepage";
 import Navbar from "./NavBar";
 import { Search } from "../pages/searchpage";
 import { Routes, Route } from 'react-router-dom';
@@ -26,7 +26,7 @@ function App(props) {
         <Routes>
           <Route index element={<Homepage />} />
           <Route path="upload" element={<TextSubmissionForm />} />
-          <Route path="profile" element={<Profile />} />
+          
           <Route path="search" element={<Search />} >
               <Route path=":projectName" element={<LoadProjectProfile />} />
               <Route index element={<CardList projectList={projectList} />} />
