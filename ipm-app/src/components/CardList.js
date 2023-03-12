@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown'; // Import for dropdown
 import DropdownButton from 'react-bootstrap/DropdownButton'; // Import for dropdown button
 
-import { getDatabase, ref, set as firebaseSet } from 'firebase/database'; // Import for database use
-
 function SortButton() {
     return (
       <DropdownButton id="sort-button" title="Sort by">
@@ -24,8 +22,6 @@ function ProjectCard(props) {
 
     const img = props.img;                                      // The displayed image of the project (string)
     const projectName = props.name;                             // The name/title of the project (string)
-    //const projectDescription = props.description;               // The description of the project (string)
-    //const projectTags = props.tags;                             // The tags of the project (Array of: strings)
     const projectCourse = props.course;                         // The course that the project is for (string)
     const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
     const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)

@@ -47,7 +47,7 @@ function App(props) {
           <Route path="upload" element={<TextSubmissionForm />} />
           
           <Route path="search" element={<Search />} >
-              <Route path=":projectName" element={<LoadProjectProfile />} />
+              <Route path=":projectName" element={<LoadProjectProfile projectList={projectList}/>} />
               <Route index element={<CardList projectList={projectList} />} />
           </Route>
           <Route path="*" element={<Homepage />} />

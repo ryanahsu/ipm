@@ -8,13 +8,14 @@ import PROJECT_LIST from '../data/portfolio-projects.json'; // Projects to displ
 export function LoadProjectProfile(props){
 
     const projectNameString = useParams().projectName;
-    let project =  _.find(PROJECT_LIST, {name: projectNameString.replaceAll('-', ' ')});
+    let project =  _.find(props.projectList, {name: projectNameString.replaceAll('-', ' ')});
 
     const imgurl = project.imgurl; 
     const name = project.name; 
     const description = project.description
     const className = project.course; 
-    const page = project.page; 
+    const hours = project.hours; 
+    const grade = project.grade;
 
     // need to select the image and load 
     const projectImg = (
@@ -31,8 +32,8 @@ export function LoadProjectProfile(props){
                 <h2>{name} </h2>
                 <li>Description: {description}</li>
                 <li>Class: {className} </li>
-                <li>Quarter: </li>
-                <li>Team members: </li>
+                <li>Hours spent: {hours}</li>
+                <li>Grade Received: {grade}</li>
             </ul>
         </div>
     );
