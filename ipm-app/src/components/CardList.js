@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown'; // Import for dropdown
 import DropdownButton from 'react-bootstrap/DropdownButton'; // Import for dropdown button
 
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database'; // Import for database use
+
 function SortButton() {
     return (
       <DropdownButton id="sort-button" title="Sort by">
         <Dropdown.Item href="#/action-1">Grade</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Upload Date</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Likes</Dropdown.Item>
         <Dropdown.Item href="#/action-4">Time Spent</Dropdown.Item>
       </DropdownButton>
     );
@@ -24,8 +24,8 @@ function ProjectCard(props) {
 
     const img = props.img;                                      // The displayed image of the project (string)
     const projectName = props.name;                             // The name/title of the project (string)
-    const projectDescription = props.description;               // The description of the project (string)
-    const projectTags = props.tags;                             // The tags of the project (Array of: strings)
+    //const projectDescription = props.description;               // The description of the project (string)
+    //const projectTags = props.tags;                             // The tags of the project (Array of: strings)
     const projectCourse = props.course;                         // The course that the project is for (string)
     const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
     const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)
@@ -45,10 +45,9 @@ function ProjectCard(props) {
             <img className="card-img-top" src={img} alt={projectName} />
             <div className="card-body">
                 <h3 className="card-title">{projectName}</h3>
-                <p>{projectDescription}</p>
                 <p className="card-text">{projectCourse}</p>
                 <p className="card-text">Grade received: {projectGrade}</p>
-                <p className="card-text">{projectHours} hours</p>
+                <p className="card-text">Hours spent: {projectHours}</p>
                 {projectPage}
             </div>
         </div>
@@ -59,7 +58,8 @@ function ProjectCard(props) {
 // This function needs the prop: deck
 // deck should be an array of card objects
 export default function CardList(props) {
-    const cardDeck = props.projectList;                    // The array of cards to be rendered (Array of: card objects)
+
+    const cardDeck = props.projectList;                     // The array of cards to be rendered (Array of: card objects)
 
     // Map the cards in cardDeck into JSX elements
     const renderableCardDeck = cardDeck.map((card) => {
