@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export function TextSubmissionForm() {
-    const [userName, setUserName] = useState("");
+    const [projName, setProjName] = useState("");
     const [projDescription, setProjDescription] = useState("");
     const [projImg, setProjImg] = useState("");
     const [courseName, setCourseName] = useState("");
@@ -13,7 +13,7 @@ export function TextSubmissionForm() {
         event.preventDefault();
         alert("Thank you for submitting!");
         // Reset the form after submission
-        setUserName("");
+        setProjName("");
         setCourseName("");
         setProjDescription("");
         setTimeSpent("");
@@ -27,8 +27,8 @@ export function TextSubmissionForm() {
             <div className="col">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label className="form-label">First and last name</label>
-                        <input className="form-control" value={userName} onChange={(event) => (setUserName(event.target.value))} required />
+                        <label className="form-label">Project name</label>
+                        <input className="form-control" value={projName} onChange={(event) => (setUserName(event.target.value))} required />
                     </div>
                     <div className="mb-3">
                         <label>Course name</label>
