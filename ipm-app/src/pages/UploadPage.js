@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { getDatabase, ref, push as firebasePush, get, child } from "firebase/database";
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
-export function TextSubmissionForm() {
+export function ProjectUploadForm() {
     const [projName, setProjName] = useState("");
     const [projDescription, setProjDescription] = useState("");
-    const [projImg, setProjImg] = useState("");
+    const [imgFile, setImgFile] = useState("");
+    const [imgURL, setImgURL] = useState("");
     const [courseName, setCourseName] = useState("");
     const [projGrade, setProjGrade] = useState("");
     const [timeSpent, setTimeSpent] = useState("");
@@ -12,13 +15,46 @@ export function TextSubmissionForm() {
     function handleSubmit(event) {
         event.preventDefault();
         alert("Thank you for submitting!");
+        addProject(projName, courseName, projDescription, timeSpent, projGrade, imgFile);
         // Reset the form after submission
         setProjName("");
         setCourseName("");
         setProjDescription("");
         setTimeSpent("");
         setProjGrade("");
-        setProjImg("");
+        setImgFile("");
+        document.getElementById('formFile').value = '';
+    }
+
+    const handleChange = (event) => {
+        if (event.target.files.length > 0 && event.target.files[0]) {
+            const imgFile = event.target.files[0];
+            setImgFile(imgFile);
+            setImgURL(URL.createObjectURL(imgFile));
+        }
+    }
+
+    const handleImageUpload = () => {
+        const storage = getStorage();
+        const imgRef = storageRef(storage, "project-images/"+projName.replace(" ", "-"));
+        uploadBytes(imgRef, imgFile);
+
+    }
+
+    const addProject = async (projName, courseName, projDescription, timeSpent, projGrade) => {
+        const newProject = {
+            "course": courseName,
+            "description": projDescription,
+            "grade": projGrade,
+            "hours": timeSpent,
+            "img": imgURL,
+            "name": projName,
+        }
+
+        const db = getDatabase();
+        const allProjectsRef = ref(db, "projects");
+        firebasePush(allProjectsRef, newProject, projName);
+
     }
 
     return (
@@ -55,10 +91,10 @@ export function TextSubmissionForm() {
                     </div>
                     <div className="mb-3">
                         <label for="formFile" className="form-label">Upload a screenshot of your project</label>
-                        <input className="form-control" type="file" id="formFile" value={projImg} onChange={(event) => (setProjImg(event.target.value))} required />
+                        <input className="form-control" type="file" id="formFile" accept = ".jpg, .png" onChange={handleChange} required />
                     </div>
                     <div>
-                        <button type="submit" className="btn btn-primary mb-3">Submit</button>
+                        <button type="submit" onClick={handleImageUpload} className="btn btn-primary mb-3">Submit</button>
                     </div>
                 </form>
             </div>
@@ -67,5 +103,5 @@ export function TextSubmissionForm() {
                 <p>&copy; 2023 Informatics Portfolio Manager</p>
         </footer>
     </div>
-    )
+    );
 }   
