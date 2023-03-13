@@ -5,12 +5,6 @@ import { Link } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown'; // Import for dropdown
 import DropdownButton from 'react-bootstrap/DropdownButton'; // Import for dropdown button
 
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
-
-import { getDownloadURL, ref as storageRef, getStorage } from 'firebase/storage';
-
-
-
 function SortButton(props) {
 
     function handleClickGradeA(event) {
@@ -45,7 +39,7 @@ function SortButton(props) {
             <Dropdown.Item href="#/action-3" onClick={handleClickTimeA}>Time Spent (Ascending)</Dropdown.Item>
             <Dropdown.Item href="#/action-4" onClick={handleClickTimeB}>Time Spent (Descending)</Dropdown.Item>
             <Dropdown.Item href="#/action-5" onClick={handleClickNone}>None</Dropdown.Item>
-      </DropdownButton>
+        </DropdownButton>
     );
 }
  
@@ -58,7 +52,7 @@ function ProjectCard(props) {
     const projectCourse = props.course;                         // The course that the project is for (string)
     const projectHours = props.hours;                           // The amount of time in hours spent working on the project (number)
     const projectGrade = props.grade;                           // The grade the project received *scaling format tbd* (number)
-    const projectPageName = projectName.replaceAll(' ', '-');      // The name of the project's details page (string)
+    const projectPageName = projectName.replaceAll(' ', '-');   // The name of the project's details page (string)
     
     // This element renders the Learn More button
     // The button is actually a link that renders the /profile page
@@ -83,6 +77,37 @@ function ProjectCard(props) {
     );
 }
 
+function SearchBar(props) {
+
+    const [searchInput, setSearchInput] = useState("");         // State variable for searchBar
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(searchInput);
+        props.searchCallback(searchInput);
+    };
+
+    const handleChange = (event) => {
+        event.preventDefault();
+        setSearchInput(event.target.value);
+    }
+
+    return(
+        <form onSubmit={handleSubmit}>
+            <div className="search-bar">
+                <input
+                    type="text"
+                    id="header-search"
+                    placeholder="project name..."
+                    onChange={handleChange}
+                    name="s" 
+                />
+                <button className="btn btn-dark align-self-end" id="search-button" type="submit">Search</button>
+            </div>
+        </form>
+    )
+}
+
 // CardList renders out an array of card objects to the screem
 // This function needs the prop: deck
 // deck should be an array of card objects
@@ -101,9 +126,7 @@ export default function CardList(props) {
                 <div className="banner">
                     <h1>Search for Projects</h1>
                 </div>
-                <div className="search-bar">
-                    <input type="text" placeholder="Search here..." />
-                </div>
+                <SearchBar searchCallback={props.searchCallback} />
                 <h2>Results:</h2>
                 <div className="sort">
                     <SortButton sortCallback={props.sortCallback} />

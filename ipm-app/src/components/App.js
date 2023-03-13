@@ -13,7 +13,8 @@ import { getDatabase, ref, set as firebaseSet, onValue, push as firebasePush } f
 
 function App(props) {
 
-  const [projectList, setProjectList] = useState([]);     // List of all projects in the database
+  const [projectList, setProjectList] = useState([]);                   // List of all projects in the database
+  const [shadowProjectList, setShadowProjectList] = useState([]);       // Identical copy of projectList that does not get filtered
 
   // Update the list of projects whenever one is added to the database
   useEffect(() => {
@@ -30,6 +31,7 @@ function App(props) {
       })
 
       setProjectList(objArray);
+      setShadowProjectList(objArray);
     });
 
   }, [])
@@ -48,26 +50,36 @@ function App(props) {
     if (sortType === 'gradeA') {
       const sorted = [...projectList].sort((a, b) => (a.grade > b.grade) ? 1 : -1);
       setProjectList([...sorted]);
-      console.log(projectList);
+      //console.log(projectList);
 
     // Grades Descending
     } else if (sortType === 'gradeB') {
       const sorted = [...projectList].sort((a, b) => (a.grade > b.grade) ? -1 : 1);
       setProjectList([...sorted]);
-      console.log(projectList);
+      //console.log(projectList);
 
     // Time Spent Ascending
     } else if (sortType === 'timeA') {
       const sorted = [...projectList].sort((a, b) => (a.hours > b.hours) ? 1 : -1);
       setProjectList([...sorted]);
-      console.log(projectList);
+      //console.log(projectList);
 
     // Time Spent Descending
     } else if (sortType === 'timeB') {
       const sorted = [...projectList].sort((a, b) => (a.hours > b.hours) ? -1 : 1);
       setProjectList([...sorted]);
-      console.log(projectList);
+      //console.log(projectList);
     }
+  }
+
+  function searchFilter(searchQuery){
+    const result = shadowProjectList.filter(projObj => {
+      const projName = projObj.name.toLowerCase();
+      console.log(projName + " contains " + searchQuery);
+      return(projName.includes(searchQuery.toLowerCase())); // Return true to filter if the projObj includes the searchQuery.  projObj and searchQuery put toLowerCase for easy comparison.
+    });
+    console.log(result);
+    setProjectList(result);
   }
 
   return (
@@ -80,7 +92,7 @@ function App(props) {
           
           <Route path="search" element={<Search />} >
               <Route path=":projectName" element={<LoadProjectProfile projectList={projectList}  />} />
-              <Route index element={<CardList projectList={projectList} sortCallback={sortProjects} />} />
+              <Route index element={<CardList projectList={projectList} sortCallback={sortProjects} searchCallback={searchFilter} />} />
           </Route>
           <Route path="*" element={<Homepage />} />
         </Routes>

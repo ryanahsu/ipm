@@ -69,6 +69,10 @@ main.upload {
     background-color: #85754D;
 }
 
+#search-button {
+    background-color: #85754D;
+}
+
 .img-container {
     display: flex;
     flex-wrap: wrap;

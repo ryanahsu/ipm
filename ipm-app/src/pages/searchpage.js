@@ -4,9 +4,6 @@ import React from 'react'; // General React import
 import { Outlet } from 'react-router-dom';
 
 export function Search(props) {
-    //const projects = props.projectList;         // The list of projects (Array of: project objects)
-
-    //const renderableCardDeck = (<CardList projectList={projects} />);  // TODO: change projects to filtered projects
 
     return (
         <div>

@@ -55,7 +55,7 @@ export function LoadProjectProfile(props){
             <div className="commentColumn">
                 <h3>Comments!</h3>
                     <h5>What are your thoughts on the project?</h5>
-                    <textarea className="comment" rows="5" cols="70" placeholder="Write out your comment!" value={comment} onChange={handleChange}></textarea>
+                    <textarea className="comment" rows="5" cols="70" placeholder="Write out your comment!" value={comment} onSubmit={handleChange}></textarea>
                     <div>
                     <button type="submit" className="btn-lg btn-secondary" onClick={handleSubmit}>Submit</button>
                     </div>
