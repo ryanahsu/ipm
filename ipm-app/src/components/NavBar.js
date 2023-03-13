@@ -49,7 +49,6 @@ export default function Navbar(props) {
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/upload">Upload</Link>
           <Link className="nav-link" to="/search">Search</Link>
-          <Link className="nav-link" to="/profile">Profile</Link>
         </div>
         <div className="navbar-hamburger" onClick={toggleMenu}>
           <div className="hamburger-line"></div>
