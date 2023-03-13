@@ -1,22 +1,53 @@
-import React from 'react'; // General React import
+import React, { useState } from 'react'; // General React import
 
 import { Link } from 'react-router-dom';
 
 import Dropdown from 'react-bootstrap/Dropdown'; // Import for dropdown
 import DropdownButton from 'react-bootstrap/DropdownButton'; // Import for dropdown button
 
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
+
 import { getDownloadURL, ref as storageRef, getStorage } from 'firebase/storage';
 
-function SortButton() {
+
+
+function SortButton(props) {
+
+    function handleClickGradeA(event) {
+        console.log("Sorting by: " + event.target);
+        props.sortCallback('gradeA');
+    }
+
+    function handleClickGradeB(event) {
+        console.log("Sorting by: " + event.target);
+        props.sortCallback('gradeB');
+    }
+
+    function handleClickTimeA(event) {
+        console.log("Sorting by: " + event.target);
+        props.sortCallback('timeA');
+    }
+
+    function handleClickTimeB(event) {
+        console.log("Sorting by: " + event.target);
+        props.sortCallback('timeB');
+    }
+
+    function handleClickNone(event) {
+        console.log("Sorting by: " + event.target);
+        props.sortCallback('');
+    }
+
     return (
-      <DropdownButton id="sort-button" title="Sort by">
-        <Dropdown.Item href="#/action-1">Grade</Dropdown.Item>
-        <Dropdown.Item href="#/action-4">Time Spent</Dropdown.Item>
+        <DropdownButton id="sort-button" title="Sort By">
+            <Dropdown.Item href="#/action-1" onClick={handleClickGradeA}>Grade (Ascending)</Dropdown.Item>
+            <Dropdown.Item href="#/action-2" onClick={handleClickGradeB}>Grade (Descending)</Dropdown.Item>
+            <Dropdown.Item href="#/action-3" onClick={handleClickTimeA}>Time Spent (Ascending)</Dropdown.Item>
+            <Dropdown.Item href="#/action-4" onClick={handleClickTimeB}>Time Spent (Descending)</Dropdown.Item>
+            <Dropdown.Item href="#/action-5" onClick={handleClickNone}>None</Dropdown.Item>
       </DropdownButton>
     );
 }
-
-const sortButton = SortButton();
  
 // ProjectCard builds a single card for a project.
 // Each card needs the following props: img, name, description, tags, page.
@@ -57,7 +88,7 @@ function ProjectCard(props) {
 // deck should be an array of card objects
 export default function CardList(props) {
 
-    const cardDeck = props.projectList;                     // The array of cards to be rendered (Array of: card objects)
+    const cardDeck = props.projectList;    // The array of cards to be rendered (Array of: card objects)
 
     // Map the cards in cardDeck into JSX elements
     const renderableCardDeck = cardDeck.map((card) => {
@@ -75,7 +106,7 @@ export default function CardList(props) {
                 </div>
                 <h2>Results:</h2>
                 <div className="sort">
-                    {sortButton}
+                    <SortButton sortCallback={props.sortCallback} />
                 </div>
                 <div className="results">
                     <section>
