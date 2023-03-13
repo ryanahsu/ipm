@@ -70,7 +70,9 @@ function ProjectCard(props) {
                 <p className="card-text">{projectCourse}</p>
                 <p className="card-text">Grade received: {projectGrade}</p>
                 <p className="card-text">Hours spent: {projectHours}</p>
-                {projectPage}
+                <div className="projectPageButton">
+                    {projectPage}
+                </div>
             </div>
         </div>
     );
@@ -132,7 +134,7 @@ export default function CardList(props) {
                 </div>
                 <div className="results">
                     <section>
-                        <div className="container img-container card-deck">
+                        <div className="container">
                             {renderableCardDeck}
                         </div>
                     </section>

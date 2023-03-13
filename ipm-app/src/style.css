@@ -49,22 +49,6 @@ main.upload {
     text-align: center;
 }
 
-.card img {
-    padding: 0;
-    margin: 0;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    min-height: 100vh;
-}
-
 #sort-button {
     background-color: #85754D;
 }
@@ -73,19 +57,30 @@ main.upload {
     background-color: #85754D;
 }
 
-.img-container {
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 100vh;
 }
-  
+
 .card {
-    flex: 0 0 1;
     background-color: #E8E3D3;
     margin: 0.5rem;
+    width: 250px;
+    height: 350px;
     border-radius: 10px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
-    flex-wrap: wrap;
+}
+
+.card img {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .card-title {
@@ -93,13 +88,11 @@ main.upload {
 }
 
 .card-body {
-    display: flex;
     flex-direction: column;
     background-color: #E8E3D3;
     text-align: left;
     justify-content: left;
 }
-
 
 p {
     font-family: 'Encode Sans Condensed', sans-serif;
@@ -184,7 +177,7 @@ section {
 .dropdown:hover .dropbtn {
     background-color: #85754D;
 }
-  /* End of citation */
+/* End of citation */
 
 .search-bar input {
     display: inline-block;
@@ -222,8 +215,6 @@ textarea {
 form {
     font-family: 'Encode Sans Condensed', sans-serif;
 }
-
-
 
 footer {
     font-family: 'Encode Sans Condensed', sans-serif;
@@ -263,12 +254,12 @@ ul {
     align-items: center;
     height: 60px;
     padding: 0 20px;
-  }
+}
   
-  .navbar-logo {
+.navbar-logo {
     font-size: 24px;
     font-weight: bold;
-  }
+}
   
   @media only screen and (min-width: 768px) {
     .navbar-hamburger {
