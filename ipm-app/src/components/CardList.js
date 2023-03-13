@@ -68,7 +68,7 @@ function ProjectCard(props) {
             <div className="card-body">
                 <h3 className="card-title">{projectName}</h3>
                 <p className="card-text">{projectCourse}</p>
-                <p className="card-text">Grade received: {projectGrade}</p>
+                <p className="card-text">Grade received: {projectGrade}%</p>
                 <p className="card-text">Hours spent: {projectHours}</p>
                 <div className="projectPageButton">
                     {projectPage}
@@ -99,7 +99,7 @@ function SearchBar(props) {
                 <input
                     type="text"
                     id="header-search"
-                    placeholder="project name..."
+                    placeholder="Search by project name"
                     onChange={handleChange}
                     name="s" 
                 />
