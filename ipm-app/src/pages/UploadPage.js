@@ -1,46 +1,61 @@
 import React, { useState } from "react";
 
 export function TextSubmissionForm() {
-  const [className, setClassName] = useState("");
-  const [projDescription, setProjDescription] = useState("");
-  const [tagNames, setTagNames] = useState("");
-  const [fileUpload, setFileUpload] = useState("");
+    const [userName, setUserName] = useState("");
+    const [projDescription, setProjDescription] = useState("");
+    const [projImg, setProjImg] = useState("");
+    const [courseName, setCourseName] = useState("");
+    const [projGrade, setProjGrade] = useState("");
+    const [timeSpent, setTimeSpent] = useState("");
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    if (className.trim() === "" || projDescription.trim() === "" || tagNames.trim() === "" || fileUpload.trim() === "") {
-      alert("Please fill out all required fields.");
-    } else {
-      // Do something with the submitted text
-      alert("Thank you for submitting!");
-      // Reset the form after submission
-      setClassName("");
-      setProjDescription("");
-      setTagNames("");
-      setFileUpload("");
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        alert("Thank you for submitting!");
+        // Reset the form after submission
+        setUserName("");
+        setCourseName("");
+        setProjDescription("");
+        setTimeSpent("");
+        setProjGrade("");
+        setProjImg("");
     }
-  }
 
-  return (
+    return (
     <div className="container-fluid">
         <div className="row">
             <div className="col">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label className="form-label">What class are you uploading for?</label>
-                        <input className="form-control" value={className} onChange={(event) => (setClassName(event.target.value))} required></input>
+                        <label className="form-label">First and last name</label>
+                        <input className="form-control" value={userName} onChange={(event) => (setUserName(event.target.value))} required />
                     </div>
                     <div className="mb-3">
-                        <label>Give a brief description of your project.</label>
+                        <label>Course name</label>
+                        <input className="form-control" value={courseName} onChange={(event) => (setCourseName(event.target.value))} required />
+                    </div>
+                    <div className="mb-3">
+                        <label>Brief project description</label>
                         <textarea className="form-control" rows="6" value={projDescription} onChange={(event) => (setProjDescription(event.target.value))} required></textarea>
                     </div>
                     <div className="mb-3">
-                        <label>Add any tags that are associated with your project.</label>
-                        <textarea className="form-control" rows="6" value={tagNames} onChange={(event) => (setTagNames(event.target.value))} required></textarea>
+                        <label htmlFor="grade" className="form-label">Percentage grade</label>
+                        <select id="grade" name="grade" className="form-select" value={projGrade} onChange={(event) => (setProjGrade(event.target.value))} required>
+                            {Array.from({length: 101}, (_, i) => i).reverse().map(i => (
+                                <option value={i} key={i}>{i}%</option>
+                            ))}
+                        </select>
                     </div>
                     <div className="mb-3">
-                        <label for="formFile" className="form-label">Upload your project here</label>
-                        <input className="form-control" type="file" id="formFile" value={fileUpload} onChange={(event) => (setFileUpload(event.target.value))} required></input>
+                        <label htmlFor="number" className="form-label">Hours spent on project</label>
+                        <input type="number" id="number" name="number" className="form-control" pattern="[0-9]+" value={timeSpent} onChange={(event) => (setTimeSpent(event.target.value))} required />
+                        <div className="invalid-feedback">
+                            Please enter an integer.
+                        </div>
+                    </div>
+                    <div className="mb-3">
+                        <label for="formFile" className="form-label">Upload a screenshot of your project</label>
+                        <input className="form-control" type="file" id="formFile" value={projImg} onChange={(event) => (setProjImg(event.target.value))} required />
                     </div>
                     <div>
                         <button type="submit" className="btn btn-primary mb-3">Submit</button>
