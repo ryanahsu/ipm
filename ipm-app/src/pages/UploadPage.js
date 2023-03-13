@@ -28,7 +28,7 @@ export function TextSubmissionForm() {
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Project name</label>
-                        <input className="form-control" value={projName} onChange={(event) => (setUserName(event.target.value))} required />
+                        <input className="form-control" value={projName} onChange={(event) => (setProjName(event.target.value))} required />
                     </div>
                     <div className="mb-3">
                         <label>Course name</label>
