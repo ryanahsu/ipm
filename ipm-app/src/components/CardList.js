@@ -38,7 +38,6 @@ function SortButton(props) {
             <Dropdown.Item href="#/action-2" onClick={handleClickGradeB}>Grade (Descending)</Dropdown.Item>
             <Dropdown.Item href="#/action-3" onClick={handleClickTimeA}>Time Spent (Ascending)</Dropdown.Item>
             <Dropdown.Item href="#/action-4" onClick={handleClickTimeB}>Time Spent (Descending)</Dropdown.Item>
-            <Dropdown.Item href="#/action-5" onClick={handleClickNone}>None</Dropdown.Item>
         </DropdownButton>
     );
 }
