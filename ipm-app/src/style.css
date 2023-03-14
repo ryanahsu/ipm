@@ -141,6 +141,13 @@ section {
     color: #4B2E83;
 }
 
+.projectImage img {
+    margin: 20px;
+    width: 100%;
+    max-width: 80vw;
+    height: auto;
+}
+
 /* The following code for dropdown menus was adapted from: https://www.w3schools.com/howto/howto_css_dropdown.asp*/
 /* Dropdown Button */
 .dropbtn {

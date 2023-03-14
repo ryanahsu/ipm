@@ -11,7 +11,7 @@ export function LoadProjectProfile(props){
     const projectNameString = useParams().projectName;
     let project =  _.find(props.projectList, {name: projectNameString.replaceAll('-', ' ')});
 
-    const imgurl = project.imgurl; 
+    const img = project.img; 
     const name = project.name; 
     const description = project.description
     const className = project.course; 
@@ -20,8 +20,8 @@ export function LoadProjectProfile(props){
 
     // need to select the image and load 
     const projectImg = (
-        <div className="col">
-            <img src={imgurl}  className="rounded float-start" alt="Responsive img"></img>
+        <div>
+            <img src={img}  className="rounded float-start" alt="Responsive img"></img>
         </div>
     );
 
@@ -38,49 +38,17 @@ export function LoadProjectProfile(props){
             </ul>
         </div>
     );
-    
-    const [comment, setComment] = useState('');
-    const handleChange = (event) => {
-        setComment(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        setComment('');
-      };
-      
-
-    // comment box, need to make it interactive (when submit is hit, clear the comment box)
-    const commentBox = (
-            <div className="commentColumn">
-                <h3>Comments!</h3>
-                    <h5>What are your thoughts on the project?</h5>
-                    <textarea className="comment" rows="5" cols="70" placeholder="Write out your comment!" value={comment} onSubmit={handleChange}></textarea>
-                    <div>
-                    <button type="submit" className="btn-lg btn-secondary" onClick={handleSubmit}>Submit</button>
-                    </div>
-            </div>          
-    );
-
-    // update when one 'click' the subnmit button 
-
-    
 
     return (
         <div>
-            <div className="container">
-                <div className="row justify-content-evenly">
-                    <div className="col">
-                        {projectImg}
-                    </div>
-                </div>
-                <div className="row justify-content-evenly">
-                    {projectInformation}
+            <div className="row justify-content-evenly">
+                <div className="projectImage">
+                    {projectImg}
                 </div>
             </div>
-
-            <div className="container">
-                {commentBox}
+            <p></p>
+            <div className="row justify-content-evenly">
+                {projectInformation}
             </div>
         </div>
     )
