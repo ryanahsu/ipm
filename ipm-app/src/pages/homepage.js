@@ -14,6 +14,7 @@ export function Homepage() {
                 </div>
             </div>
         </header>
+
         <main>
             <div>
                 <img className="bg-image" alt="" src="../img/ratul-ghosh-AlXdGRZ7x5k-unsplash.jpg"></img>
