@@ -1,22 +1,27 @@
 import React from 'react';
 import Navbar from '../components/NavBar';
 import {LoadProjectProfile} from '../pages/profilepage'
+import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
 
 export function Homepage() {
   return (
     <div>
         <header>
-            <div className="banner">
-                <h1>Welcome to the UW Informatics Projects Portfolio Page</h1>
-                <p>Upload your projects, share ideas, and create inspiration</p>
+            <div className="flex-container">
+                <div className="banner">
+                    <h1>Welcome to the UW Informatics Projects Portfolio Page</h1>
+                    <p>Upload your projects, share ideas, and create inspiration</p>
+                </div>
             </div>
         </header>
 
         <main>
-            <div className="about">
-                <h2>What is IPM?</h2>
-                <p>IPM is a centralized hub for informatics students at the University of Washington to share projects completed within the iSchool's various classes to offer insight about the class material and teachings, and insipration to create meaningful work</p>
-                <p>Disclaimer: IPM is not a tool for plagerism and users should only use sources as inspiration and as a guide for what informatics classes offer</p>
+            <div className="container">
+                <div className="about">
+                    <h2>What is IPM?</h2>
+                    <p>IPM is a centralized hub for informatics students at the University of Washington to share projects completed within the iSchool's various classes to offer insight about the class material and teachings, and insipration to create meaningful work</p>
+                    <p>Disclaimer: IPM is not a tool for plagerism and users should only use sources as inspiration and as a guide for what informatics classes offer</p>
+                </div>
             </div>
         </main>
             
