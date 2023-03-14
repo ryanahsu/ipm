@@ -24,7 +24,8 @@ body {
 
 .banner {
     padding-top: 1rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .banner.upload {
@@ -199,9 +200,6 @@ section {
     padding: 1rem;
     max-width: 960px;
     display: inline-block;
-    background-image: '../img/ratul-ghosh-AlXdGRZ7x5k-unsplash.jpg';
-    background-size: cover;
-    padding: 20px;
 }
 
 textarea {
@@ -265,6 +263,7 @@ ul {
 .navbar-logo {
     font-size: 24px;
     font-weight: bold;
+    margin-left: 1rem;
 }
 
 .navbar-menu {
