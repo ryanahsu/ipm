@@ -2,7 +2,7 @@ import { Homepage } from "../pages/homepage";
 import Navbar from "./NavBar";
 import { Search } from "../pages/searchpage";
 import { Routes, Route } from 'react-router-dom';
-import { TextSubmissionForm } from '../pages/UploadPage'
+import { ProjectUploadForm } from '../pages/UploadPage'
 import React, { useEffect, useState}  from 'react';
 import DEFAULT_USERS from '../data/users.json';
 import { LoadProjectProfile } from '../pages/profilepage';
@@ -88,7 +88,7 @@ function App(props) {
       <div className="row flex-grow-1">
         <Routes>
           <Route index element={<Homepage />} />
-          <Route path="upload" element={<TextSubmissionForm />} />
+          <Route path="upload" element={<ProjectUploadForm />} />
           
           <Route path="search" element={<Search />} >
               <Route path=":projectName" element={<LoadProjectProfile projectList={projectList}  />} />
