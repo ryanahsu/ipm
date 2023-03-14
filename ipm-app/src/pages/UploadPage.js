@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { getDatabase, ref, push as firebasePush, get, child } from "firebase/database";
-import { getStorage, ref as storageRef, uploadBytes } from "firebase/storage";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export function ProjectUploadForm() {
     const [projName, setProjName] = useState("");
@@ -36,6 +36,7 @@ export function ProjectUploadForm() {
         }
     }
 
+    // Code adapted from lecture
     const handleChange = (event) => {
         if (event.target.files.length > 0 && event.target.files[0]) {
             const imgFile = event.target.files[0];
@@ -44,18 +45,22 @@ export function ProjectUploadForm() {
         }
     }
 
-    const handleImageUpload = () => {
+    // Code adapted from lecture
+    const handleImageUpload = async (event) => {
         const storage = getStorage();
-        const imgRef = storageRef(storage, "project-images/"+projName.replace(" ", "-"));
-        uploadBytes(imgRef, imgFile);
+        const imgRef = storageRef(storage, "project-images/"+projName.replace(" ", "-")+".png");
 
+        await uploadBytes(imgRef, imgFile);
+        const publicURL= await getDownloadURL(imgRef);
+
+        setImgURL(publicURL);
     }
 
     const handleTagsChange = (newTags) => {
         setTags(newTags);
     };
 
-    const addProject = async (projName, courseName, projDescription, timeSpent, projGrade, imgURL) => {
+    const addProject = async (projName, courseName, projDescription, timeSpent, projGrade) => {
         const newProject = {
             "course": courseName,
             "description": projDescription,
