@@ -76,9 +76,21 @@ function App(props) {
     const result = shadowProjectList.filter(projObj => {
       const projName = projObj.name.toLowerCase();
       console.log(projName + " contains " + searchQuery);
-      return(projName.includes(searchQuery.toLowerCase())); // Return true to filter if the projObj includes the searchQuery.  projObj and searchQuery put toLowerCase for easy comparison.
+
+      // Logic for if a project's name or tags match the searchQuery
+
+      // Return true to filter if the projObj includes the searchQuery.
+      if (projName.includes(searchQuery.toLowerCase())) {
+        return true;
+      // Return true to filter if the projObj tags includes the searchQuary
+      } else if (projObj.tags.includes(searchQuery.toLowerCase())) {
+        return true;
+      } else {
+        return false; 
+      }
     });
-    console.log(result);
+
+    //console.log(result);
     setProjectList(result);
   }
 

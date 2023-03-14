@@ -53,9 +53,9 @@ export function ProjectUploadForm() {
 
     const handleTagsChange = (newTags) => {
         setTags(newTags);
-      };
+    };
 
-    const addProject = async (projName, courseName, projDescription, timeSpent, projGrade) => {
+    const addProject = async (projName, courseName, projDescription, timeSpent, projGrade, imgURL) => {
         const newProject = {
             "course": courseName,
             "description": projDescription,
@@ -106,7 +106,7 @@ export function ProjectUploadForm() {
                     </div>
                     <div>
                         <label htmlFor="tags" className="form-label">Add tags associated with the project</label>
-                        <TagsInput key={resetTagsInput} tags={["Teamwork", "Communication"]} selectedTags={[]} onTagsChange={handleTagsChange} handleKeyDown={handleKeyDown} required/>
+                        <TagsInput key={resetTagsInput} tags={[]} selectedTags={[]} onTagsChange={handleTagsChange} handleKeyDown={handleKeyDown} required/>
                     </div>
                     <br></br>
                     <div className="mb-3">

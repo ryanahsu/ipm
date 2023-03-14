@@ -99,7 +99,7 @@ function SearchBar(props) {
                 <input
                     type="text"
                     id="header-search"
-                    placeholder="Search by project name"
+                    placeholder="Search by project name or tag"
                     onChange={handleChange}
                     name="s" 
                 />
